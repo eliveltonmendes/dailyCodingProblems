@@ -23,15 +23,21 @@ public class Problem1Tests {
     }
 
     @Test
-    public void calculate17() {
+    public void validateTrue17() {
         List<Integer> listNumber = Arrays.asList(10, 15, 3, 7);
         assertTrue(problem1.calculateValue(listNumber, 17));
     }
 
     @Test
-    public void calculate25(){
+    public void validateTrue25(){
         List<Integer> listNumber = Arrays.asList(10, 15, 3, 7);
         assertTrue(problem1.calculateValue(listNumber, 25));
+    }
+
+    @Test
+    public void validateTrue10(){
+        List<Integer> listNumber = Arrays.asList(10, 15, 3, 7);
+        assertTrue(problem1.calculateValue(listNumber, 10));
     }
 
     @Test
