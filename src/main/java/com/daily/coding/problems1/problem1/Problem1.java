@@ -1,5 +1,6 @@
 package com.daily.coding.problems1.problem1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Problem1 {
@@ -10,31 +11,32 @@ public class Problem1 {
      */
     
     public boolean calculateValue(List<Integer> numberList, Integer expectedValue) {
-        boolean isCalculable = false;
+        List<Integer> arraySoma = preencheArraySoma(numberList);
+        return identificaSomaExperada(arraySoma, expectedValue);
+    }
 
-        for (Integer cursorExterno = 0; cursorExterno < numberList.size(); cursorExterno++) {            
-            for (Integer cursorInterno = (cursorExterno + 1); cursorInterno < numberList.size(); cursorInterno++) { 
-                Integer valorExterno = numberList.get(cursorExterno);
-                Integer valorInterno = numberList.get(cursorInterno);
+    private List preencheArraySoma(List<Integer> arrayValores) {
+        List<Integer> arraySomas = new ArrayList<>();
 
-                isCalculable = isCorrectSum(valorExterno, valorInterno, expectedValue);
+        for (Integer cursorExterno = 0; cursorExterno < arrayValores.size(); cursorExterno++) {            
+            for (Integer cursorInterno = (cursorExterno + 1); cursorInterno < arrayValores.size(); cursorInterno++) { 
+                Integer valorExterno = arrayValores.get(cursorExterno);
+                Integer valorInterno = arrayValores.get(cursorInterno);
 
-                if (isCalculable) {
-                    break;
-                }
-            }
-
-            if (isCalculable) {
-                break;
+                arraySomas.add(valorExterno + valorInterno);
             }
         }
 
-        return isCalculable;
+        return arraySomas;
+    } 
+
+    private boolean identificaSomaExperada(List<Integer> arrayValores, Integer expectedValue){
+        for (Integer valorSoma : arrayValores) {
+            if (valorSoma == expectedValue) {
+                return true;
+            }
+        }
+
+        return false;
     }
-
-    public boolean isCorrectSum(Integer value1, Integer value2, Integer expectedValue) {
-        return (value1 + value2) == expectedValue;
-    }
-
-
 }
