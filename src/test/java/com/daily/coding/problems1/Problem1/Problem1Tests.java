@@ -25,24 +25,24 @@ public class Problem1Tests {
     @Test
     public void validateTrue17() {
         List<Integer> listNumber = Arrays.asList(10, 15, 3, 7);
-        assertTrue(problem1.calculateValue(listNumber, 17));
+        assertTrue(problem1.resolveProblema(listNumber, 17));
     }
 
     @Test
     public void validateTrue25(){
         List<Integer> listNumber = Arrays.asList(10, 15, 3, 7);
-        assertTrue(problem1.calculateValue(listNumber, 25));
+        assertTrue(problem1.resolveProblema(listNumber, 25));
     }
 
     @Test
     public void validateTrue10(){
         List<Integer> listNumber = Arrays.asList(10, 15, 3, 7);
-        assertTrue(problem1.calculateValue(listNumber, 10));
+        assertTrue(problem1.resolveProblema(listNumber, 10));
     }
 
     @Test
     public void validateFalse3(){
         List<Integer> listNumber = Arrays.asList(10, 15, 3, 7);
-        assertFalse(problem1.calculateValue(listNumber, 3));
+        assertFalse(problem1.resolveProblema(listNumber, 3));
     }
 }

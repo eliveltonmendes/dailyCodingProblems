@@ -1,9 +1,5 @@
 package com.daily.coding.problems1;
 
-import java.util.Arrays;
-
-import com.daily.coding.problems1.problem1.Problem1;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
